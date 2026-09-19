@@ -13,3 +13,7 @@ This repository contains a six-model study evaluating author-age misattribution,
 - `scripts/`: Python execution scripts for running model evaluations.
 - `analysis/`: Data processing and metric evaluation scripts.
 - `human-baseline/`: Experimental protocol for human-rater baseline comparison.
+
+## Further Reading
+- [Six AI Models. Six Ways to Fail. (Substack)](https://briannelee.substack.com/p/six-ai-models-six-ways-to-fail?r=6d1xvu) — Behavioral failure fingerprints and calibration tracking data.
+
