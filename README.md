@@ -1,5 +1,5 @@
 # LLM Author Misattribution Study
-Companion study: [ai-halo-valuation-bias](https://github.com) — same six-model panel, testing context-driven price valuation instead of author attribution.
+Companion study: [ai-halo-valuation-bias](https://github.com/BraveAnn011/ai-halo-valuation-bias) — Another industry leading model panel, testing context-driven price valuation instead of author attribution.
 
 ## Methodology & Findings
 This repository contains a six-model study evaluating author-age misattribution, miscalibrated confidence, and post-hoc confession without correction. The experiment measures text-only performance and confidence tracking across frontier large language models.
