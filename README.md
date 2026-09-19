@@ -1,5 +1,4 @@
 # LLM Author Misattribution Study
-
 Companion study: [ai-halo-valuation-bias](https://github.com) — same six-model panel, testing context-driven price valuation instead of author attribution.
 
 ## Methodology & Findings
