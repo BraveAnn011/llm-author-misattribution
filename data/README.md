@@ -23,8 +23,8 @@ The master file is the row-for-row concatenation of seven collection batches. Ea
 
 Not every model was run in every batch:
 
-- **Gemini 3.1 Pro** appears only in the three batches from July 13–14, giving 309 rows.
-- **Claude Fable 5** is absent from the first batch and partial in `v7_except_claude`, giving 486 rows.
+- **Gemini 3.1 Pro** joined at the `v7_except_claude` batch (July 13), so it is missing from the four July 12 batches. Three of its Condition E sessions also timed out. Total: 309 rows.
+- **Claude Fable 5** joined at the second batch (`v3`) and is partial in `v7_except_claude`, giving 486 rows.
 - **The other four models** appear in all seven batches, giving 603–609 rows.
 
 Conditions D and P start in the third batch, and E in the fifth, so those cells are smaller than A, B and C. Every analysis is reported per model and per condition, never pooled across models. Cell sizes are printed by `analysis/analyze_master.py`.

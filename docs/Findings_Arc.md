@@ -16,12 +16,14 @@ The arc runs from **what** models get wrong (F1–F3), to **what moves them** (F
 | GPT-4o | 0.25 (32/126) | 0.86 | 0.034 |
 | DeepSeek V4 | 0.23 (29/126) | 0.88 | 0.008 |
 
-Omnibus χ²(5) = 186.6. Three models sit at or below chance while reporting 73–88% confidence. Accuracy significantly *below* chance means the errors are systematic, not noise: these models apply a consistent but wrong rule.
+Omnibus χ²(5) = 186.6. Two clusters emerge: Claude, Gemini and GPT-5.6 are above chance with confidence close to or below their accuracy; Grok, GPT-4o and DeepSeek are at or below chance and overconfident. Three models sit at or below chance while reporting 73–88% confidence. Accuracy significantly *below* chance means the errors are systematic, not noise: these models apply a consistent but wrong rule.
 
 ## F2. Same text, opposite readings
 *Output: "F2"; Condition A counts below come from the released data*
 
 For the 17-year-old's answer in Condition A, Claude chooses "17M" 33 times out of 36. DeepSeek chooses "28F" 25 times out of 42, and GPT-4o 25 out of 42. The same formal, hedged text is read as a teenager by one model and as an adult woman by others.
+
+The correct reading is available in principle. Claude, in Condition B, identified the cue directly: *"the formal, exam-essay register paired with adolescent uncertainty about whether contentment equals happiness in Answer 3."*
 
 ## F3. Forced choice masks failure severity
 *Output: "F3"*
@@ -31,7 +33,7 @@ Without the answer options (Condition C, ±3 years or range scoring), accuracy o
 ## F4. Institutional context becomes a demographic prior
 *Output: "F4/F5" (B−A, E−A, B−E)*
 
-"Community-college biology final" lowers Claude from 0.94 to 0.69 (B−A = −0.25), while a neutral label leaves it unchanged (E−A = 0.00). The harm is specific to the institutional label (B−E = −0.25). Gemini (−0.16) and GPT-5.6 (−0.09) move the same way. The models convert a fact about an institution into an assumption about who studies there.
+"Community-college biology final" lowers Claude from 0.94 to 0.69 (B−A = −0.25), while a neutral label leaves it unchanged (E−A = 0.00). The harm is specific to the institutional label (B−E = −0.25). It is stable: Claude's Condition B accuracy is below its Condition A accuracy in every one of the six batches it took part in (by 0.11 to 0.33). Gemini (−0.16) and GPT-5.6 (−0.09) move the same way. The models convert a fact about an institution into an assumption about who studies there.
 
 ## F5. Prompting elicits latent capability; it cannot manufacture it
 *Output: "F4/F5" (D−A)*
@@ -50,12 +52,17 @@ The pragmatic instruction raises Claude from 0.94 to 1.00, GPT-5.6 by 21 points 
 | GPT-4o | 84.6 | 7.6 | 81.3 | 85.9 |
 | DeepSeek V4 | 88.0 | 5.2 | 88.1 | 87.9 |
 
-Gemini, Grok and GPT-4o are more confident when wrong. DeepSeek's confidence barely varies at all. Stated confidence tells you which model produced an answer far more reliably than whether the answer is correct. Confidence-based routing or abstention would misroute for these models.
+Gemini, Grok and GPT-4o are more confident when wrong. DeepSeek's confidence barely varies at all. It is almost always 80, 85, 90 or 95. Within each item, its confidence when right and when wrong differ by less than one point (for example, the teenager's answer: 87.0 right vs 87.2 wrong). Its mean ranges only from 87.2 to 88.3 across conditions A, B, D and E. DeepSeek's confidence is an emission, not a computation. Stated confidence tells you which model produced an answer far more reliably than whether the answer is correct. Confidence-based routing or abstention would misroute for these models.
 
 ## F7. Confession without correction
 *Output: "F7" for external-blame language; hand coding for self-blame*
 
-The 1,809 reveal turns are overwhelmingly accepting rather than defensive: external-blame language appears in only 12 of them (9 from DeepSeek, 3 from GPT-5.6). The models acknowledge their errors. DeepSeek, for example, produced 51 internal self-blame statements in hand coding, and 11 of 12 sampled ones opened with "Thank you." But acknowledgment does not carry forward: DeepSeek's accuracy (F1) and confidence (F6) stay the same across fresh sessions. A fluent self-critique is not evidence that a model's reasoning has changed.
+The 1,809 reveal turns are overwhelmingly accepting rather than defensive: external-blame language appears in only 12 of them (9 from DeepSeek, 3 from GPT-5.6). The models acknowledge their errors. DeepSeek, for example, produced 51 internal self-blame statements in hand coding, and 11 of 12 sampled ones opened with "Thank you." One reads:
+
+> "I overlooked that a 17-year-old male can also write in a deliberately formal register when answering an anonymous question, perhaps trying to sound intellectual or serious."
+> (DeepSeek V4, Condition D reveal turn; full text in `data/runs/raw_outputs_v7.json`)
+
+That is exactly the right diagnosis. But acknowledgment does not carry forward: DeepSeek's accuracy (F1) and confidence (F6) stay the same across fresh sessions. A fluent self-critique is not evidence that a model's reasoning has changed.
 
 ## F8. Generational change within one lab
 *Output: "CONDITION A" and "F8"*
