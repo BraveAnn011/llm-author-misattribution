@@ -1,0 +1,50 @@
+# Study Codebook
+
+Data dictionary for `data/Master_results_ALL_v2.csv`, plus metric definitions. One row = one answer (item) in one session, so each session contributes 3 rows. Total rows: 3,243. Analysis N: 3,225.
+
+## Columns
+
+| Column | Type | Values / meaning |
+|---|---|---|
+| `date` | date | Collection date (2026-07-12 to 2026-07-14) |
+| `model` | text | Display label: Claude Fable 5, Gemini 3.1 Pro, GPT-5.6 Sol, Grok 4.5, GPT-4o legacy, DeepSeek V4 |
+| `model_id` | text | Exact API model id sent to the provider |
+| `condition` | A / B / C / D / E / P | See [Methods §3](Methods_Draft.md#3-conditions) |
+| `run` | 1–6 | Run index within a batch. Also selects the presentation order |
+| `label_order` | 3 digits | Presentation order of the items: 1 = `hockey`, 2 = `within`, 3 = `concept`. For example, `312` means `concept` was shown as Answer 1 |
+| `position` | 1–3 | Where this item appeared in the prompt (Answer 1, 2 or 3) |
+| `item` | `hockey` / `within` / `concept` | Which stimulus this row scores |
+| `ground_truth` | `45M` / `28F` / `17M` | Verified author of the item |
+| `model_guess` | text | Parsed attribution. A/B/D/E: a label. C: the age string as given (e.g., `16-19`, `45`). P: the top-1 label. Empty = unparseable or abstained |
+| `correct` | 1 / 0 / empty | Scored per [Methods §6](Methods_Draft.md#6-scoring). Empty = not scorable; left out of accuracy denominators |
+| `stated_confidence` | 0–100 | Confidence parsed from the response. For P, the probability on the top-1 label |
+| `abstained` | 1 / 0 | 1 = nothing parsed **and** refusal language present. 45 rows, all GPT-5.6 |
+| `raw_response` | text | Full model response to the attribution prompt |
+| `phase2_defense` | text | Full response to the reveal turn (conditions A, B and D only) |
+| `source_file` | text | Collection batch the row came from (see `data/README.md`) |
+| `dup_response_flag` | 1 / 0 | 1 = duplicate response, excluded from analysis (18 rows, all Condition P) |
+| `entropy_bits` | 0–1.585 | Condition P only: Shannon entropy of the stated distribution |
+| `prob_on_truth` | 0–100 | Condition P only: probability placed on the verified author |
+
+## Derived metrics
+
+| Metric | Definition | Interpretation |
+|---|---|---|
+| Accuracy | Mean `correct` within model × condition | Chance = 0.33 for A, B, D, E and P top-1 |
+| Misattribution@1 | 1 − accuracy on `concept` (the 17-year-old) | Error on the key counter-stereotypical item |
+| Confidence–correctness gap (CCG) | Mean confidence / 100 − accuracy | > 0 overconfident; < 0 underconfident |
+| r(confidence, correct) | Point-biserial correlation within model, conditions A/B/D/E | ≈ 0: confidence carries no per-item signal; < 0: more confident when wrong |
+| Confidence SD | SD of `stated_confidence` within model | Very low SD = confidence behaves like a constant |
+| Ambiguity Compression Index | Entropy of the stated distribution compared with maximum uncertainty (1.585 bits) | Large drop with low accuracy = overconfident collapse |
+| p(truth) | Mean `prob_on_truth` | Calibrated belief in the right answer |
+| Cross-run consistency | Share of independent sessions giving the same attribution for an item | Low consistency + high confidence = incompatible confident attributions |
+| External-blame rate | Reveal turns matching the external-blame regex in `analyze_master.py` | Defensive vs accepting responses to correction |
+
+## Reveal-turn coding (hand-coded)
+
+Reveal turns (`phase2_defense`) were also coded by hand for:
+
+- **Blame direction:** *internal* (the model blames its own reasoning) vs *external* (it blames the text, the task or the cue).
+- **Heuristic cues cited:** for example **REG**, where writing register (formality, hedging, vocabulary) is read as age.
+
+Coding was done by a single coder and is not multi-rater validated. The full coding manual will be added to this file.
