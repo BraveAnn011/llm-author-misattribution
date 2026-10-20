@@ -92,7 +92,7 @@ All analysis is per model and never pooled across models. Every number is printe
 | Confidence–correctness gap (CCG) | Mean stated confidence (0–1) minus accuracy; positive = overconfident |
 | Misattribution@1 | Error rate on the 17-year-old's answer (`concept`) |
 | r(confidence, correct) | Point-biserial correlation within model, pooled over A, B, D and E |
-| Below-chance test | Exact one-sided binomial test of Condition A accuracy against 1/3 |
+| Chance test | Exact two-sided binomial test of Condition A accuracy against 1/3 |
 | Omnibus test | χ² test of correct/incorrect × model in Condition A |
 | Confidence as trait | Mean and SD of confidence, overall and split by correct vs wrong |
 | External-blame language | Regex over reveal turns (e.g., "misleading", "stand by", "remain confident") |

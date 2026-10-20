@@ -55,7 +55,7 @@ All six label orderings are used, giving full positional counterbalancing. Every
 
 ## Key findings
 
-1. **Below chance at high confidence.** Three of six models score at or below chance while reporting 73–88% confidence. DeepSeek V4 scores 0.23 (29/126; exact one-sided binomial test against 1/3, p = 0.008), and GPT-4o 0.25 (p = 0.034). Accuracy differs strongly by model: χ²(5) = 186.6.
+1. **Below chance at high confidence.** Three of six models score at or below chance while reporting 73–88% confidence. DeepSeek V4 scores 0.23, significantly *below* chance (29/126; exact two-sided binomial test against 1/3, p = 0.014). GPT-4o's 0.25 is marginal (p = 0.059), and Grok's 0.35 is indistinguishable from chance (p = 0.71). Accuracy differs strongly by model: χ²(5) = 186.6.
 2. **Same text, opposite readings.** Claude assigns the 17-year-old's answer correctly 33/36 times. DeepSeek assigns it to "28F" 25/42 times.
 3. **Forced choice masks failure severity.** Without the answer options (Condition C), accuracy on the teenager's answer is 0.00 for Grok, GPT-4o and DeepSeek, and 0.26 for Claude.
 4. **An institutional label hurts the strongest model.** "Community-college biology final" drops Claude from 0.94 to 0.69. A neutral label changes nothing (0.94 → 0.94). Institutional metadata is turned into a demographic prior.

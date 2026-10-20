@@ -5,18 +5,18 @@
 The arc runs from **what** models get wrong (F1–F3), to **what moves them** (F4–F5), to **whether their self-reports can be trusted** (F6–F7), to **change over time** (F8). It closes with what the study taught about its own tools (F9).
 
 ## F1. Below chance, at high confidence
-*Output: "CONDITION A" and "F1: below-chance test"*
+*Output: "CONDITION A" and "F1: chance test"*
 
-| Model | Accuracy (A) | Mean confidence | Exact one-sided p vs 1/3 |
+| Model | Accuracy (A) | Mean confidence | Exact two-sided p vs 1/3 |
 |---|---:|---:|---:|
-| Claude Fable 5 | 0.94 (102/108) | 0.67 | — |
-| Gemini 3.1 Pro | 0.76 (39/51) | 0.87 | — |
-| GPT-5.6 Sol | 0.63 (76/120) | 0.64 | — |
-| Grok 4.5 | 0.35 (44/126) | 0.73 | 0.685 |
-| GPT-4o | 0.25 (32/126) | 0.86 | 0.034 |
-| DeepSeek V4 | 0.23 (29/126) | 0.88 | 0.008 |
+| Claude Fable 5 | 0.94 (102/108) | 0.67 | above chance |
+| Gemini 3.1 Pro | 0.76 (39/51) | 0.87 | above chance |
+| GPT-5.6 Sol | 0.63 (76/120) | 0.64 | above chance |
+| Grok 4.5 | 0.35 (44/126) | 0.73 | 0.706 |
+| GPT-4o | 0.25 (32/126) | 0.86 | 0.059 |
+| DeepSeek V4 | 0.23 (29/126) | 0.88 | 0.014 |
 
-Omnibus χ²(5) = 186.6. Two clusters emerge: Claude, Gemini and GPT-5.6 are above chance with confidence close to or below their accuracy; Grok, GPT-4o and DeepSeek are at or below chance and overconfident. Three models sit at or below chance while reporting 73–88% confidence. Accuracy significantly *below* chance means the errors are systematic, not noise: these models apply a consistent but wrong rule.
+Omnibus χ²(5) = 186.6. Two clusters emerge: Claude, Gemini and GPT-5.6 are above chance with confidence close to or below their accuracy; Grok, GPT-4o and DeepSeek are at or below chance and overconfident. Three models sit at or below chance while reporting 73–88% confidence. Grok is indistinguishable from chance and GPT-4o's shortfall is marginal. DeepSeek is significantly *below* chance, which means its errors are systematic, not noise: it applies a consistent but wrong rule.
 
 ## F2. Same text, opposite readings
 *Output: "F2"; Condition A counts below come from the released data*

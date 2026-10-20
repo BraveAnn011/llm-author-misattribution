@@ -44,11 +44,11 @@ Data dictionary for `data/Master_results_ALL_v2.csv`, plus metric definitions. O
 
 The three item-level rows within a session are not independent. Cluster by session for inference. Condition C is scored by the open-age rule, not exact match, so its accuracy is not comparable to A, B, D and E.
 
-## Reveal-turn coding (hand-coded)
+## Reveal-turn coding
 
-Reveal turns (`phase2_defense`) were also coded by hand for:
+Reveal turns (`phase2_defense`) are coded for **blame direction**:
 
-- **Blame direction:** *internal* (the model blames its own reasoning) vs *external* (it blames the text, the task or the cue).
-- **Heuristic cues cited:** for example **REG**, where writing register (formality, hedging, vocabulary) is read as age.
+- **External blame:** the model attributes its error to the text or the task setup. This is operationalized as a pre-specified lexical pattern, the `BLAME` regex in `analysis/analyze_master.py`. It is reproducible from the released data.
+- **Internal blame:** the model attributes the error to its own reasoning (e.g., "I stereotyped…", "I failed to consider…"). This was counted by manual reading: for example, DeepSeek V4 made 51 internal self-blame statements.
 
-Coding was done by a single coder and is not multi-rater validated. The full coding manual will be added to this file.
+Neither code is multi-rater validated. They are coarse operationalizations of a distinction visible on manual reading, not validated psychometric instruments.
