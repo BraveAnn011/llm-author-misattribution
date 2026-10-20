@@ -56,6 +56,21 @@ for m in MODELS:
     print(f"{m:16s} acc={acc(s):.2f} conf={conf(s):.2f} CCG={conf(s)-acc(s):+.2f} "
           f"Mis@1(17M)={1-acc(c17):.2f} r={rr:+.2f} n={len(s)}")
 
+print("\n== F1: chance test (Cond A, exact two-sided binomial vs 1/3) ==")
+from math import comb
+tab = []
+for m in MODELS:
+    s = cell(m, 'A')
+    k, n = sum(1 for r in s if r['correct'] == '1'), len(s)
+    pmf = [comb(n, i) * (1/3)**i * (2/3)**(n - i) for i in range(n + 1)]
+    p = sum(q for q in pmf if q <= pmf[k] * (1 + 1e-7))
+    tab.append((k, n - k))
+    print(f"{m:16s} {k}/{n} p={p:.3g}")
+N, K = sum(a + b for a, b in tab), sum(a for a, b in tab)
+chi = sum((o - e)**2 / e for a, b in tab
+          for o, e in ((a, (a + b) * K / N), (b, (a + b) * (N - K) / N)))
+print(f"omnibus accuracy x model: chi2({len(tab) - 1}) = {chi:.1f}")
+
 print("\n== F3: CONDITION C, teen item (concept), range/±3-year scoring ==")
 for m in MODELS:
     rs = [r for r in rows if r['model'] == m and r['condition'] == 'C'
