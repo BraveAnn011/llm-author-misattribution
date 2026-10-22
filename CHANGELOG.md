@@ -5,4 +5,4 @@
 - Initial public release: methodology, data, analysis scripts, findings.
 
 ### In progress
-- Human-rater baseline (see docs/ or human-baseline/).
+- Human-rater baseline (see human-baseline/).

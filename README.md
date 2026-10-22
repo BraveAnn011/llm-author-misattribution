@@ -10,8 +10,12 @@ This repository contains a six-model study evaluating author-age misattribution,
 
 ## Project Structure
 - `scripts/`: Python execution scripts for running model evaluations.
-- `analysis/`: Data processing and metric evaluation scripts.
+- `analysis/`: Data processing and metric evaluation scripts. `stats_paper.py` reproduces every statistic in the manuscript: `python3 analysis/stats_paper.py data/Master_results_ALL_v2.csv` (requires pandas, numpy, scipy).
 - `human-baseline/`: Experimental protocol for human-rater baseline comparison.
+
+## License
+- Code (`scripts/`, `analysis/`): MIT, see [LICENSE](LICENSE).
+- Data and text (`data/`, documentation): CC BY 4.0, see [LICENSE-DATA](LICENSE-DATA).
 
 ## Further Reading
 - [Six AI Models. Six Ways to Fail. (Substack)](https://briannelee.substack.com/p/six-ai-models-six-ways-to-fail?r=6d1xvu) — Behavioral failure fingerprints and calibration tracking data.
