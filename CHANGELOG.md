@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1 (2026-11-04)
+### Changed
+- README, `docs/Methods_Draft.md` and `docs/Baseline_Packet.md` consent wording: all three writers have given written consent for research use and publication. The arXiv v1 Ethics Statement predates this and will be updated in the next version.
+
 ## v1.1.0 (2026-11-04)
 ### Added
 - README: models and API ids, conditions, the paper's Table 1 with Wilson intervals and session-level chance tests, key findings, limitations, a consent and provenance section, reproduction steps and the arXiv citation.

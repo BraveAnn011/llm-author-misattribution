@@ -83,7 +83,7 @@ Read these before citing the results (paper §6).
 
 ## Stimulus texts and consent
 
-The three answers were handwritten extra-credit responses to a community-college biology final, collected in 2025. Each writer recorded an age and gender at collection, and the texts are de-identified in all released materials. The writers signed their answers as part of the class activity; the study idea arose after collection. **The signed originals were later lost, and no research-specific consent documentation or formal ethics review exists.** Retrospective written consent for research use and publication is being sought from the writers. Any text whose writer declines will be removed from the released data and from later versions of the paper (paper §7).
+The three answers were handwritten extra-credit responses to a community-college biology final, collected in 2025. Each writer recorded an age and gender at collection, and the texts are de-identified in all released materials. The writers signed their answers as part of the class activity; the study idea arose after collection, and the signed originals were later lost. **All three writers have since given written consent for research use and publication.** The consent forms are kept private. No formal ethics review was conducted. The Ethics Statement in arXiv v1 (paper §7) was written before consent was obtained and will be updated in the next version.
 
 ## Repository structure
 
