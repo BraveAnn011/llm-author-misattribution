@@ -1,14 +1,15 @@
-# Human-Rater Baseline (in progress)
+# Human-Rater Baseline (not yet run)
 
 ## Purpose
-Establish a human baseline for the same author misattribution task the models performed, to distinguish "models are miscalibrated relative to true authorship facts" from "models are miscalibrated relative to what a human would guess given the same text excerpt."
+Establish a human baseline for the same author-misattribution task the models performed. This distinguishes "models are miscalibrated relative to the true authors" from "models are miscalibrated relative to what a human would guess from the same text."
 
-## Planned protocol
-- Recruit N human raters (target: TBD) via [platform TBD]
-- Same stimulus set as the model trials: same text passages, same prompt contexts
-- Raters blind to model outputs and to study hypotheses
-- Same age-estimate + confidence-rating response format used for models
-- Scoring: same calibration method as analysis/analyze_master.py
+## Protocol
+The full rater packet (instructions, response forms, counterbalancing, scoring and planned analyses) is in [`../docs/Baseline_Packet.md`](../docs/Baseline_Packet.md). In summary:
+
+- 15–20 adult raters, fluent in English, blind to model outputs and hypotheses
+- the same three transcripts, verbatim, in counterbalanced order
+- an open age estimate (Condition C), then label matching (Condition A), then a reveal turn
+- the same response format and scoring code as the model trials
 
 ## Status
-Protocol drafted, not yet run. Results will be added here when complete.
+Protocol and packet are ready. No human data have been collected, and no human results are reported in this repository.
