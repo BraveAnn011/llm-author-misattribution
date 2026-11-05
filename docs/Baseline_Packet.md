@@ -64,4 +64,4 @@ Record one row per rater × item, using the same columns as the model data where
 
 ## Ethics
 
-Raters give informed consent, and no identifying information is collected. The stimulus texts are de-identified. Retrospective written consent for research use is being sought from their writers; see the README, "Stimulus texts and consent". Do not run the baseline with any text whose writer has declined.
+Raters give informed consent, and no identifying information is collected. The stimulus texts are de-identified. All three writers have given written consent for research use and publication; see the README, "Stimulus texts and consent".

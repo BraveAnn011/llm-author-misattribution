@@ -4,7 +4,7 @@
 
 ## 1. Stimuli
 
-Three handwritten answers to an extra-credit question on a community-college biology final exam, collected in 2025: *"What is happiness? Are you happy?"* Each writer recorded an age and gender at collection. The signed originals were later lost; retrospective written consent for research use is being sought (see the README, "Stimulus texts and consent"):
+Three handwritten answers to an extra-credit question on a community-college biology final exam, collected in 2025: *"What is happiness? Are you happy?"* Each writer recorded an age and gender at collection. The signed originals were later lost; all three writers have since given written consent for research use and publication (see the README, "Stimulus texts and consent"):
 
 | Item key | Recorded author | Opening words |
 |---|---|---|
